@@ -21,6 +21,11 @@ public class ServletExController {
         response.sendError(404, "404 오류입니다");
     }
 
+    @GetMapping("/error-429")
+    public void error429(HttpServletResponse response) throws IOException {
+        response.sendError(429, "429 너무 많은 요청입니다.");
+    }
+
     @GetMapping("/error-502")
     public void error502(HttpServletResponse response) throws IOException {
         response.sendError(502, "502 오류입니다");
